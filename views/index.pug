@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{name}'s personal blog
+    body 
+        header 
+            h1 Welcome to #{name}'s personal blog page!
+        main 
+            - var currentHour = new Date().getHours()
+            if currentHour < 12
+                p Good morning, #{name}!
+            else if currentHour < 18
+                p Good afternoon #{name}!
+            else 
+                p Good evening, #{name}!
+
+
+            -var hobbies = ['coding', 'exploring']
+            h2 My hobbies 
+            ul 
+                each hobby in hobbies 
+                    li= hobby
